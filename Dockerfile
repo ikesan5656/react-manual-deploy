@@ -4,7 +4,7 @@ FROM node:21-alpine AS builder
 # 後続のコマンドが実行されるディレクトリをコンテナ内の/appに設定
 WORKDIR /app
 # ローカルのpackage.jsonとpackage-lock.jsonをコンテナの作業ディレクトリにコピー
-#COPY package.json package-lock.json ./
+COPY package.json package-lock.json ./
 # Node.jsのOpenSSL関連の問題を回避するための環境変数を設定。
 # 詳細→https://builtin.com/software-engineering-perspectives/err-ossl-evp-unsupported
 ENV NODE_OPTIONS=--openssl-legacy-provider
