@@ -11,7 +11,7 @@ ENV NODE_OPTIONS=--openssl-legacy-provider
 # package.jsonに定義された依存関係をインストール
 RUN npm install
 # 全てのソースコードをコンテナ内にコピー
-COPY /opt/app/. ./
+COPY ./ ./
 # アプリケーションのビルド
 RUN npm run build
 
